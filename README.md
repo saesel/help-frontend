@@ -6,8 +6,11 @@ Aplicação em desenvolvimento.
 <summary><b>Imagens - Telas de Acesso / Cadastro</b></summary>
   
 ### Tela de Acesso
-![image](https://github.com/saesel/help-frontend/assets/51432896/18f6a286-d879-4c1c-9cbe-529eebd3962c)
+![tela de acesso](https://github.com/saesel/help-frontend/assets/51432896/24c268f3-3d9b-4ebc-aeb5-f5186789c8be)
+
 
 ### Tela de Cadastro
-![image](https://github.com/saesel/help-frontend/assets/51432896/9b613d78-f202-4798-bb71-bbae5b1d13f0)
+![tela de cadastro](https://github.com/saesel/help-frontend/assets/51432896/807b57cd-845c-437b-9d2b-6d10f0874571)
+
 </details>
+
