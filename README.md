@@ -1,5 +1,8 @@
 # HELP | Front-End
 Aplicação em desenvolvimento.
+## Tecnologias utilizadas:
+* React.js
+* Tailwind CSS
 
 ## Entrega do dia 20/11
 <details>
