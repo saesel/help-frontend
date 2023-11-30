@@ -10,12 +10,19 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const tasks = localStorage.getItem("tasks");
+    const storagedTasks = localStorage.getItem("tasks");
 
-    if (tasks) {
-      setTasks(JSON.parse(tasks));
+    if (storagedTasks) {
+      const sortedTasks = sortTasksByDate(JSON.parse(storagedTasks));
+      setTasks(sortedTasks);
     }
   }, []);
+
+  const sortTasksByDate = (tasksArray) => {
+    return tasksArray.sort(
+      (a, b) => new Date(a.tasks[0].date) - new Date(b.tasks[0].date),
+    );
+  };
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -26,17 +33,21 @@ export default function Home() {
   };
 
   const handleAddTask = (newTask) => {
-    setTasks([...tasks, newTask]);
-    localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
+    const updatedTasks = [...tasks, newTask];
+    const sortedTasks = sortTasksByDate(updatedTasks);
+
+    setTasks(sortedTasks);
+    localStorage.setItem("tasks", JSON.stringify(sortedTasks));
 
     handleCloseModal();
   };
 
   const handleDelete = (name) => {
     const filteredTasks = tasks.filter((task) => task.tasks[0].name !== name);
+    const sortedTasks = sortTasksByDate(filteredTasks);
 
-    setTasks(filteredTasks);
-    localStorage.setItem("tasks", JSON.stringify(filteredTasks));
+    setTasks(sortedTasks);
+    localStorage.setItem("tasks", JSON.stringify(sortedTasks));
   };
 
   return (
